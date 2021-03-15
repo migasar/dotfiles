@@ -4,7 +4,10 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
+# -- Old version --
+plugins=(common-aliases git gitfast history-substring-search last-working-dir pyenv sublime virtualenv vscode zsh-syntax-highlighting)
+# -- New version --
+# plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -28,6 +31,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# -- Old version --
 # Call `nvm use` automatically in a directory with a `.nvmrc` file
 # autoload -U add-zsh-hook
 # load-nvmrc() {
@@ -49,6 +53,28 @@ export NVM_DIR="$HOME/.nvm"
 # add-zsh-hook chpwd load-nvmrc
 # load-nvmrc
 
+# -- New version --
+# Call `nvm use` automatically in a directory with a `.nvmrc` file
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use --silent
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    nvm use default --silent
+  fi
+}
+type -a nvm > /dev/null && add-zsh-hook chpwd load-nvmrc
+type -a nvm > /dev/null && load-nvmrc
+
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
 # Same for `./node_modules/.bin` and nodejs
@@ -61,5 +87,6 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
-export BROWSER="/mnt/c/Program Files/Firefox Developer Edition/firefox.exe"
+# export BROWSER="/mnt/c/Program Files/Firefox Developer Edition/firefox.exe"
+export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
 export PYTHONPATH="/home/mica/code/migasar/data-challenges/04-Decision-Science:$PYTHONPATH"
