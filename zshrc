@@ -92,3 +92,4 @@ export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe
 export PYTHONPATH="/home/mica/code/migasar/data-challenges/04-Decision-Science:$PYTHONPATH"
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
+export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
