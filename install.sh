@@ -54,6 +54,7 @@ if [[ ! `uname` =~ "darwin" ]]; then
 else
   SUBL_PATH=~/Library/Application\ Support/Sublime\ Text\ 3
 fi
+
 mkdir -p $SUBL_PATH/Packages/User $SUBL_PATH/Installed\ Packages
 backup "$SUBL_PATH/Packages/User/Preferences.sublime-settings"
 curl -k https://sublime.wbond.net/Package%20Control.sublime-package > $SUBL_PATH/Installed\ Packages/Package\ Control.sublime-package
