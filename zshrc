@@ -12,14 +12,17 @@ plugins=(
   history-substring-search 
   last-working-dir 
   pyenv 
+  ssh-agent 
   sublime 
   # vscode 
+  zsh-autosuggestions 
   zsh-syntax-highlighting 
   )
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
+# ZSH_DISABLE_COMPFIX=true
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
@@ -74,6 +77,5 @@ export LC_ALL=en_US.UTF-8
 
 # export BROWSER="/mnt/c/Program Files/Firefox Developer Edition/firefox.exe"
 # export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
-
 # export PYTHONPATH="/home/mica/code/migasar/data-challenges/04-Decision-Science:$PYTHONPATH"
 # export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
