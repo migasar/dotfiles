@@ -11,7 +11,7 @@
 
 [core]
   pager = less -FRSX
-	editor = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w
+  # editor = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w
 
 [alias]
   co = checkout
@@ -42,18 +42,20 @@
   autocorrect = 1
 
 [push]
-	default = simple
+  default = simple
 
 [branch "master"]
   mergeoptions = --no-edit
 
 [pull]
   rebase = false
+
 [user]
-	email = migatsar@gmail.com
-	name = Mickael Gaspar
+  email = migatsar@gmail.com
+  name = Mickael Gaspar
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
