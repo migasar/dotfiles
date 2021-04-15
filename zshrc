@@ -1,18 +1,25 @@
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="agnoster"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-# -- Old version --
-plugins=(common-aliases git gitfast history-substring-search last-working-dir pyenv sublime virtualenv vscode zsh-syntax-highlighting)
-# -- New version --
-# plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
+plugins=(
+  common-aliases 
+  git 
+  gitfast 
+  history-substring-search 
+  last-working-dir 
+  pyenv 
+  sublime 
+  # vscode 
+  zsh-syntax-highlighting 
+  )
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
-ZSH_DISABLE_COMPFIX=true
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
@@ -31,29 +38,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# -- Old version --
-# Call `nvm use` automatically in a directory with a `.nvmrc` file
-# autoload -U add-zsh-hook
-# load-nvmrc() {
-#   local node_version="$(nvm version)"
-#   local nvmrc_path="$(nvm_find_nvmrc)"
-
-#   if [ -n "$nvmrc_path" ]; then
-#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-#     if [ "$nvmrc_node_version" = "N/A" ]; then
-#       nvm install
-#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
-#       nvm use --silent
-#     fi
-#   elif [ "$node_version" != "$(nvm version default)" ]; then
-#     nvm use default --silent
-#   fi
-# }
-# add-zsh-hook chpwd load-nvmrc
-# load-nvmrc
-
-# -- New version --
 # Call `nvm use` automatically in a directory with a `.nvmrc` file
 autoload -U add-zsh-hook
 load-nvmrc() {
@@ -86,10 +70,10 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
+
+
 # export BROWSER="/mnt/c/Program Files/Firefox Developer Edition/firefox.exe"
-export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
-export PYTHONPATH="/home/mica/code/migasar/data-challenges/04-Decision-Science:$PYTHONPATH"
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
+# export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
+
+# export PYTHONPATH="/home/mica/code/migasar/data-challenges/04-Decision-Science:$PYTHONPATH"
+# export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
