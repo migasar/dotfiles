@@ -50,6 +50,7 @@
 [pull]
   rebase = false
 
+
 [user]
   email = migatsar@gmail.com
   name = Mickael Gaspar
