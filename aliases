@@ -11,3 +11,6 @@ alias make='arch -x86_64 make'
 alias pip='arch -x86_64 pip'
 alias pyenv='arch -x86_64 pyenv'
 alias zsh='arch -x86_64 zsh'
+
+# Get Gcloud private key
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/mica/Documents/gcp_keys/lewagon-challenges-279a994e2c37.json
