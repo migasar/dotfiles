@@ -4,3 +4,10 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
+
+# Lock the commands to ensure that they use their Rosetta variant, instead of ARM
+alias brew='arch -x86_64 brew'
+alias make='arch -x86_64 make'
+alias pip='arch -x86_64 pip'
+alias pyenv='arch -x86_64 pyenv'
+alias zsh='arch -x86_64 zsh'
