@@ -9,7 +9,6 @@ ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 # ZSH_THEME="robbyrussell"
-# ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
@@ -84,6 +83,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
 # export BROWSER="/mnt/c/Program Files/Firefox Developer Edition/firefox.exe"
 # export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
 # export PYTHONPATH="/home/mica/code/migasar/data-challenges/04-Decision-Science:$PYTHONPATH"
@@ -91,4 +92,3 @@ export LC_ALL=en_US.UTF-8
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"

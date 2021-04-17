@@ -8,19 +8,33 @@
     "fade_fold_buttons": false,
 
     // Columns in which to display vertical rulers
-    "rulers": [
+    "rulers":
+    [
         80, 120
     ],
 
     // Set to true to insert spaces when tab is pressed
     "translate_tabs_to_spaces": true,
 
+    // If translate_tabs_to_spaces is true, use_tab_stops will make tab and
+    // backspace insert/delete up to the next tabstop
+    "use_tab_stops": true,
+
+    // Trims white space added by auto_indent when moving the caret off the
+    // line.
+    "trim_automatic_white_space": true,
+
+    // Disables horizontal scrolling if enabled.
+    // May be set to true, false, or "auto", where it will be disabled for
+    // source code, and otherwise enabled.
+    "word_wrap": false,
+
     // Set to "none" to turn off drawing white space, "selection" to draw only the
     // white space within the selection, and "all" to draw all white space
-  	"draw_white_space": true,
+    "draw_white_space": false,
 
     // Set to true to removing trailing white space on save
-  	"trim_trailing_white_space_on_save": true,
+    "trim_trailing_white_space_on_save": true,
 
     // Set to true to ensure the last line of the file ends in a newline
     // character when saving
@@ -54,7 +68,8 @@
     // folder_exclude_patterns and file_exclude_patterns control which files
     // are listed in folders on the side bar. These can also be set on a per-
     // project basis.
-    "folder_exclude_patterns": [
+    "folder_exclude_patterns":
+    [
         "tmp",
         "log",
         ".git",
@@ -80,4 +95,6 @@
         "Vintage"
     ],
 
+    "remember_open_files": false,
+    "update_check": false,
 }
