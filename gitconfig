@@ -52,8 +52,8 @@
 
 
 [user]
-  email = migatsar@gmail.com
-  name = Mickael Gaspar
+	email = migatsar@gmail.com
+	name = migasar
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
