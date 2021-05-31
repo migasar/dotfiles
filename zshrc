@@ -12,19 +12,25 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
+# Load pyenv (to manage your Python versions)
+export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # https://github.com/pyenv/pyenv-virtualenv/issues/135
+type -a pyenv > /dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
+
+
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
 plugins=(
-  common-aliases 
-  git 
-  gitfast 
-  history-substring-search 
-  last-working-dir 
-  pyenv 
-  # ssh-agent 
-  sublime 
-  vscode 
-  zsh-autosuggestions 
-  zsh-syntax-highlighting 
+  common-aliases
+  git
+  gitfast
+  history-substring-search
+  last-working-dir
+  pyenv
+  # ssh-agent
+  # sublime
+  vscode
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
@@ -39,10 +45,6 @@ unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
-# Load pyenv (to manage your Python versions)
-export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # https://github.com/pyenv/pyenv-virtualenv/issues/135
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
 
 # Load nvm (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"
@@ -89,12 +91,16 @@ if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.i
 if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 
 
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
+# export PYTHONPATH="/home/mica/code/migasar/data-challenges/04-Decision-Science:$PYTHONPATH"
 
 # export BROWSER="/mnt/c/Program Files/Firefox Developer Edition/firefox.exe"
 # export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
-# export PYTHONPATH="/home/mica/code/migasar/data-challenges/04-Decision-Science:$PYTHONPATH"
+
+# Set as environment variable the path to where is stored the Data used by NLTK (Python package for NLP)
+export NLTK_DATA="~/Documents/nltk_data"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
