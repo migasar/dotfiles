@@ -1,100 +1,66 @@
 {
-    // Sets the colors used within the text area
-    "color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
-
-    "font_size": 14,
-
-    // Hides the fold buttons unless the mouse is over the gutter
-    "fade_fold_buttons": false,
-
-    // Columns in which to display vertical rulers
-    "rulers":
-    [
-        80, 120
-    ],
-
-    // Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": true,
-
-    // If translate_tabs_to_spaces is true, use_tab_stops will make tab and
-    // backspace insert/delete up to the next tabstop
-    "use_tab_stops": true,
-
-    // Trims white space added by auto_indent when moving the caret off the
-    // line.
-    "trim_automatic_white_space": true,
-
-    // Disables horizontal scrolling if enabled.
-    // May be set to true, false, or "auto", where it will be disabled for
-    // source code, and otherwise enabled.
-    "word_wrap": false,
-
-    // Set to "none" to turn off drawing white space, "selection" to draw only the
-    // white space within the selection, and "all" to draw all white space
-    "draw_white_space": false,
-
-    // Set to true to removing trailing white space on save
-    "trim_trailing_white_space_on_save": true,
-
-    // Set to true to ensure the last line of the file ends in a newline
-    // character when saving
-    "ensure_newline_at_eof_on_save": true,
-
-
-    //
-    // User Interface Settings
-    //
-
-    // The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)
-    "theme": "Adaptive.sublime-theme",
-
-    // Makes tabs with modified files more visible
-    "highlight_modified_tabs": true,
-
-
-    //
-    // Application Behavior Settings
-    //
-
-    // Exiting the application with hot_exit enabled will cause it to close
-    // immediately without prompting. Unsaved modifications and open files will
-    // be preserved and restored when next starting.
-    //
-    // Closing a window with an associated project will also close the window
-    // without prompting, preserving unsaved changes in the workspace file
-    // alongside the project.
-    "hot_exit": false,
-
-    // folder_exclude_patterns and file_exclude_patterns control which files
-    // are listed in folders on the side bar. These can also be set on a per-
-    // project basis.
-    "folder_exclude_patterns":
-    [
-        "tmp",
-        "log",
-        ".git",
-        ".svn",
-        "_site",
-        ".bundle",
-        ".sass-cache",
-        ".asset-cache",
-        "build",
-        "node_modules",
-        "dist",
-        "public/packs",
-        "coverage",
-        ".ipynb_checkpoints",
-        ".pytest_cache",
-        "__pycache__"
-    ],
-
-    // List any packages to ignore here. When removing entries from this list,
-    // a restart may be required if the package contains plugins.
-    "ignored_packages": [
-        "Python",
-        "Vintage"
-    ],
-
-    "remember_open_files": false,
-    "update_check": false,
+	"color_scheme": "auto",
+	"draw_white_space": false,
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
+	"folder_exclude_patterns":
+		[
+			".asset-cache",
+			".bundle",
+			".git",
+			".ipynb_checkpoints",
+			".pytest_cache",
+			".sass-cache",
+			".svn",
+			"__pycache__",
+			"_site",
+			"build",
+			"coverage",
+			"dist",
+			"log",
+			"node_modules",
+			"public/packs",
+			"tmp",
+	],
+	"font_face":
+		[
+			"Hack",
+			"Fira Code",
+			"JetBrains Mono",
+			"Menlo",
+	],
+	"font_size": 14,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"ignored_packages":
+		[
+			"A File Icon",
+		"Color Highlighter",
+		"CSS3",
+		"Djaneiro",
+		"requirementstxt",
+		"SublimeLinter-contrib-yamllint",
+		"SublimeLinter-pycodestyle",
+		"SublimeLinter-pydocstyle",
+		"SublimeLinter-pyflakes",
+		"Vintage",
+	],
+	"remember_open_files": false,
+	"rulers":
+		[
+			// set text rulers so I can judge line length for pep8
+        	72, // docstrings
+        	79, // optimum code line length
+        	100  // maximum allowable length
+	],
+	"theme": "Adaptive.sublime-theme",
+	"dark_color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+	"light_color_scheme": "Packages/Color Scheme - Default/Celeste.sublime-color-scheme",
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false,
+	"word_wrap": false,
+	"wrap_width": 79,
+	"wrap_width_style": "min",
 }
