@@ -12,5 +12,6 @@ alias pip='arch -x86_64 pip'
 alias pyenv='arch -x86_64 pyenv'
 alias zsh='arch -x86_64 zsh'
 
-# Get Gcloud private key
-export GOOGLE_APPLICATION_CREDENTIALS=/Users/mica/Documents/gcp_keys/lewagon-challenges-279a994e2c37.json
+# Get Gcloud private key of the active project
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/mica/code/migasar/gcp/lewagon-challenges-279a994e2c37.json
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/mica/code/migasar/gcp/wagon-data-610-c64059b2a1b5.json
