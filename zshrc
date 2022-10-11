@@ -1,6 +1,5 @@
 # Split Development Setup for M1 Mac 
 ################
-
 # ref: https://www.roguelynn.com/words/m1-dev-setup/ 
 # Siloed dev environments for arm64 & x86 architectures, 
 # by creating the files `.zshrc.arm64` and `.zshrc.x86_64` 
@@ -13,10 +12,6 @@ else
     # regular (arm64)
     source ~/.zshrc.arm64
 fi
-
-# Commands to switch between a Rosetta-based shell (x86_64) and native M1 shell (arm64)
-alias rosetta='(){ arch -x86_64 $SHELL ; }'
-alias native='(){ arch -arm64e $SHELL ; }'
 
 ################################
 
