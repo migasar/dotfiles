@@ -1,8 +1,8 @@
-# Split Development Setup for M1 Mac 
+# Split Development Setup for M1 Mac
 ################
-# ref: https://www.roguelynn.com/words/m1-dev-setup/ 
-# Siloed dev environments for arm64 & x86 architectures, 
-# by creating the files `.zshrc.arm64` and `.zshrc.x86_64` 
+# ref: https://www.roguelynn.com/words/m1-dev-setup/
+# Siloed dev environments for arm64 & x86 architectures,
+# by creating the files `.zshrc.arm64` and `.zshrc.x86_64`
 
 # Detect if running Rosetta or not to pull in specific config
 if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
@@ -16,7 +16,7 @@ fi
 ################################
 
 
-# Oh-My-Zsh Setup 
+# Oh-My-Zsh Setup
 ################
 
 # If you come from bash you might have to change your $PATH.
@@ -38,6 +38,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="bira"
+# ZSH_THEME="cobalt2"
 # ZSH_THEME="fino"
 # ZSH_THEME="strug"
 # ZSH_THEME="ys"
@@ -141,11 +142,11 @@ plugins=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# End of OMZ Setup 
+# End of OMZ Setup
 ################################
 
 
-# Wagon's Setup 
+# Wagon's Setup
 ################
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
@@ -217,7 +218,22 @@ export PYTHONBREAKPOINT=ipdb.set_trace
 ################################
 
 
-
 ################################
+
+# Created by `pipx` on 2022-10-11 21:40:47
+export PATH="$PATH:/Users/Mica/.local/bin"
+# To activate completions for zsh you need to have bashcompinit enabled in zsh:
+# autoload -U bashcompinit
+# bashcompinit
+# Afterwards you can enable completion for pipx:
+# eval "$(register-python-argcomplete pipx)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+# Credentials to the working GCP project
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/Code/migasar/gcp/.keys/mindful-playground-025aa8eae8f2.json
+
 # direnv (this line needs to be at the end of the file)
 eval "$(direnv hook zsh)"
