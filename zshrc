@@ -1,70 +1,62 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# M1 MAC Split Development Setup
+################
+
+# ref: https://www.roguelynn.com/words/m1-dev-setup/
+# Siloed dev environments for arm64 & x86 architectures,
+# by creating the files `.zshrc.arm64` and `.zshrc.x86_64`
+
+# Detect if running Rosetta or not to pull in specific config
+if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
+    # Rosetta arch (x86_64)
+    # source ~/.zshrc.x86_64
+
+    # `brew` setup
+    local brew_path="/usr/local/bin"
+    local brew_opt_path="/usr/local/opt"
+    export PATH="${brew_path}:${PATH}"
+    eval "$(${brew_path}/brew shellenv)"
+    # `pyenv` setup
+    export PYENV_ROOT="$HOME/.pyenv.x86_64"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+    # `pipx` setup
+    export PATH="$PATH:/Users/Mica/.local/x86_64/bin"
+    export PIPX_BIN_DIR="$HOME/.local/x86_64/bin"
+    export PIPX_HOME="$HOME/.local/x86_64/pipx"
+    # pretty stuff
+    # function rosetta {
+    #     echo "%{$fg_bold[blue]%}(%{$FG[205]%}x86%{$fg_bold[blue]%})%{$reset_color%}"
+    # }
+    # PROMPT='$(rosetta)$(virtualenv_info) $(collapse_pwd)$(prompt_char)$(git_prompt_info)'
+else
+    # Native arch (arm64)
+    # source ~/.zshrc.arm64
+
+    # `brew` setup for arm64
+    local brew_path="/opt/homebrew/bin"
+    local brew_opt_path="/opt/homebrew/opt"
+    export PATH="${brew_path}:${PATH}"
+    eval "$(${brew_path}/brew shellenv)"
+    # `pyenv` setup
+    export PYENV_ROOT="$HOME/.pyenv"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+    # `pipx` setup
+    export PATH="$PATH:/Users/Mica/.local/bin"
+    export PIPX_BIN_DIR="$HOME/.local/bin"
+    export PIPX_HOME="$HOME/.local/pipx"
+    export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/versions/ouroboros/bin/python"
+    # # pretty stuff
+    # PROMPT='$(virtualenv_info)$(collapse_pwd)$(prompt_char)$(git_prompt_info)'
+    ########
+    # Wagon Data Setup recommendation
+    # ref: https://github.com/pyenv/pyenv/issues/1877
+    # Clarify linker compiler (to avoid a bug when using `pyenv` in Apple Silicon)
+    export LDFLAGS="-L/opt/homebrew/lib"
+    export CPPFLAGS="-I/opt/homebrew/include"
 fi
-
-
-# # M1 MAC Split Development Setup
-# ################
-
-# # ref: https://www.roguelynn.com/words/m1-dev-setup/
-# # Siloed dev environments for arm64 & x86 architectures,
-# # by creating the files `.zshrc.arm64` and `.zshrc.x86_64`
-
-# # Detect if running Rosetta or not to pull in specific config
-# if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
-#     # Rosetta arch (x86_64)
-#     # source ~/.zshrc.x86_64
-
-#     # `brew` setup
-#     local brew_path="/usr/local/bin"
-#     local brew_opt_path="/usr/local/opt"
-#     export PATH="${brew_path}:${PATH}"
-#     eval "$(${brew_path}/brew shellenv)"
-#     # `pyenv` setup
-#     export PYENV_ROOT="$HOME/.pyenv.x86_64"
-#     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#     eval "$(pyenv init -)"
-#     # `pipx` setup
-#     export PATH="$PATH:/Users/Mica/.local/x86_64/bin"
-#     export PIPX_BIN_DIR="$HOME/.local/x86_64/bin"
-#     export PIPX_HOME="$HOME/.local/x86_64/pipx"
-#     # pretty stuff
-#     # function rosetta {
-#     #     echo "%{$fg_bold[blue]%}(%{$FG[205]%}x86%{$fg_bold[blue]%})%{$reset_color%}"
-#     # }
-#     # PROMPT='$(rosetta)$(virtualenv_info) $(collapse_pwd)$(prompt_char)$(git_prompt_info)'
-# else
-#     # Native arch (arm64)
-#     # source ~/.zshrc.arm64
-
-#     # `brew` setup for arm64
-#     local brew_path="/opt/homebrew/bin"
-#     local brew_opt_path="/opt/homebrew/opt"
-#     export PATH="${brew_path}:${PATH}"
-#     eval "$(${brew_path}/brew shellenv)"
-#     # `pyenv` setup
-#     export PYENV_ROOT="$HOME/.pyenv"
-#     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#     eval "$(pyenv init -)"
-#     # `pipx` setup
-#     export PATH="$PATH:/Users/Mica/.local/bin"
-#     export PIPX_BIN_DIR="$HOME/.local/bin"
-#     export PIPX_HOME="$HOME/.local/pipx"
-#     export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/versions/ouroboros/bin/python"
-#     # # pretty stuff
-#     # PROMPT='$(virtualenv_info)$(collapse_pwd)$(prompt_char)$(git_prompt_info)'
-#     ########
-#     # Wagon Data Setup recommendation
-#     # ref: https://github.com/pyenv/pyenv/issues/1877
-#     # Clarify linker compiler (to avoid a bug when using `pyenv` in Apple Silicon)
-#     export LDFLAGS="-L/opt/homebrew/lib"
-#     export CPPFLAGS="-I/opt/homebrew/include"
-# fi
-# ################
-# # End of M1 MAC Split Development Setup
+################
+# End of M1 MAC Split Development Setup
 
 ################################
 
@@ -100,8 +92,16 @@ export ZSH="$HOME/.oh-my-zsh"
 ## PowerLevel10k Theme
 ################
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # ref: https://github.com/romkatv/powerlevel10k
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
