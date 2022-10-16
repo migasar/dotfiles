@@ -16,8 +16,8 @@ alias serve='python -m SimpleHTTPServer' # Or ruby -run -e httpd . -p 8000 :)
 # Split Development Setup for M1 Mac
 ################
 # Commands to switch between a Rosetta-based shell (x86_64) and native M1 shell (arm64)
-# alias rosetta='(){ arch -x86_64 $SHELL ; }'
-# alias native='(){ arch -arm64e $SHELL ; }'
+alias rosetta='(){ arch -x86_64 $SHELL ; }'
+alias native='(){ arch -arm64e $SHELL ; }'
 
 ################################
 
