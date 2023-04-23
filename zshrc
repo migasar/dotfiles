@@ -1,74 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
-# # M1 MAC Split Development Setup
-# ################
-
-# # ref: https://www.roguelynn.com/words/m1-dev-setup/
-# # Siloed dev environments for arm64 & x86 architectures,
-# # by creating the files `.zshrc.arm64` and `.zshrc.x86_64`
-
-# # Detect if running Rosetta or not to pull in specific config
-# if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
-#     # Rosetta arch (x86_64)
-#     # source ~/.zshrc.x86_64
-
-#     # `brew` setup
-#     local brew_path="/usr/local/bin"
-#     local brew_opt_path="/usr/local/opt"
-#     export PATH="${brew_path}:${PATH}"
-#     eval "$(${brew_path}/brew shellenv)"
-#     # `pyenv` setup
-#     export PYENV_ROOT="$HOME/.pyenv.x86_64"
-#     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#     eval "$(pyenv init -)"
-#     # `pipx` setup
-#     export PATH="$PATH:/Users/Mica/.local/x86_64/bin"
-#     export PIPX_BIN_DIR="$HOME/.local/x86_64/bin"
-#     export PIPX_HOME="$HOME/.local/x86_64/pipx"
-#     # pretty stuff
-#     # function rosetta {
-#     #     echo "%{$fg_bold[blue]%}(%{$FG[205]%}x86%{$fg_bold[blue]%})%{$reset_color%}"
-#     # }
-#     # PROMPT='$(rosetta)$(virtualenv_info) $(collapse_pwd)$(prompt_char)$(git_prompt_info)'
-# else
-#     # Native arch (arm64)
-#     # source ~/.zshrc.arm64
-
-#     # `brew` setup for arm64
-#     local brew_path="/opt/homebrew/bin"
-#     local brew_opt_path="/opt/homebrew/opt"
-#     export PATH="${brew_path}:${PATH}"
-#     eval "$(${brew_path}/brew shellenv)"
-#     # `pyenv` setup
-#     export PYENV_ROOT="$HOME/.pyenv"
-#     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#     eval "$(pyenv init -)"
-#     # `pipx` setup
-#     export PATH="$PATH:/Users/Mica/.local/bin"
-#     export PIPX_BIN_DIR="$HOME/.local/bin"
-#     export PIPX_HOME="$HOME/.local/pipx"
-#     export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/versions/ouroboros/bin/python"
-#     # # pretty stuff
-#     # PROMPT='$(virtualenv_info)$(collapse_pwd)$(prompt_char)$(git_prompt_info)'
-#     ########
-#     # Wagon Data Setup recommendation
-#     # ref: https://github.com/pyenv/pyenv/issues/1877
-#     # Clarify linker compiler (to avoid a bug when using `pyenv` in Apple Silicon)
-#     export LDFLAGS="-L/opt/homebrew/lib"
-#     export CPPFLAGS="-I/opt/homebrew/include"
-# fi
-# ################
-# # End of M1 MAC Split Development Setup
-
-################################
-
-
 # OMZ Setup
 ################
 
@@ -77,8 +6,6 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# Commented out to avoid duplcated lines of code
-# ZSH=$HOME/.oh-my-zsh
 
 
 ## OMZ Theming
@@ -88,25 +15,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "bira" "fino" "strug" "ys")
-
-
-## PowerLevel10k Theme
-################
-
-# ref: https://github.com/romkatv/powerlevel10k
-ZSH_THEME="powerlevel10k/powerlevel10k"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# iTerm Integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
 ## OMZ Configuration
@@ -175,43 +90,17 @@ plugins=(
 # Commented out to avoid duplcated lines of code
 # source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 ################
 # End of OMZ Setup
 
 ################################
 
 
-# WAGON Setup
+# DEV Workspace Setup
 ################
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
-export HOMEBREW_NO_ANALYTICS=1
+# export HOMEBREW_NO_ANALYTICS=1
 
 # Disable warning about insecure completion-dependent directories
 ZSH_DISABLE_COMPFIX=true
@@ -240,10 +129,8 @@ load-nvmrc() {
   if nvm -v &> /dev/null; then
     local node_version="$(nvm version)"
     local nvmrc_path="$(nvm_find_nvmrc)"
-
     if [ -n "$nvmrc_path" ]; then
       local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
       if [ "$nvmrc_node_version" = "N/A" ]; then
         nvm install
       elif [ "$nvmrc_node_version" != "$node_version" ]; then
@@ -274,29 +161,12 @@ export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+
 ################
-# End of WAGON Setup
+# End of Workspace Setup
 
 ################################
 
-
-# MY Settings
-################
-
-# Created by `pipx` on 2022-10-11 21:40:47
-# export PATH="$PATH:/Users/Mica/.local/bin"
-# To activate completions for zsh you need to have bashcompinit enabled in zsh:
-autoload -U bashcompinit
-bashcompinit
-# Afterwards you can enable completion for pipx:
-eval "$(register-python-argcomplete pipx)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
-# The next line enables shell command completion for gcloud.
-if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
-# Credentials to the working GCP project
-export GOOGLE_APPLICATION_CREDENTIALS=$HOME/Code/migasar/gcp/.keys/mindful-playground-025aa8eae8f2.json
 
 # `direnv` (this line needs to be at the end of the file)
 eval "$(direnv hook zsh)"

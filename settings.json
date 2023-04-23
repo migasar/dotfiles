@@ -1,10 +1,4 @@
 {
-  // Wagon's Setup //
-  // "[python]": {
-  //     "editor.bracketPairColorization.enabled": false,
-  //     "editor.guides.bracketPairs": false,
-  //     "editor.tabSize": 4
-  // },
   "editor.bracketPairColorization.enabled": true,
   // "editor.detectIndentation": false,
   "editor.fontSize": 14,
@@ -65,20 +59,16 @@
   "python.linting.flake8Enabled": false,
   "python.linting.pylintEnabled": false,
   "python.terminal.activateEnvironment": false,
-  "ruby.lint": {
-    "rubocop": true
-  },
+
   "telemetry.telemetryLevel": "off",
   "window.restoreWindows": "none",
   "window.newWindowDimensions": "maximized",
   "workbench.editor.enablePreview": true,
-  // "workbench.iconTheme": "vscode-great-icons",
   "workbench.settings.editor": "json",
   "workbench.settings.openDefaultSettings": true,
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.panel.defaultLocation": "right",
-  // End of Wagon's Setup //
 
   // My Setup //
   "[python]": {
@@ -86,14 +76,11 @@
   },
   "editor.fontFamily": "'Fira Code', 'Fira Mono', Hack, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontWeight": "retina",
-  "files.associations": {
-    "*.x86_64": "shellscript",
-    "*.arm64": "shellscript"
-  },
+
   "emmet.includeLanguages": {
     "erb": "html",
     "django-html": "html"
   },
   "workbench.colorTheme": "βui - Monokai Machine",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "material-icon-theme"
 }
