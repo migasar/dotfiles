@@ -82,7 +82,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    # Useful oh-my-zsh plugins for Le Wagon bootcamps
+    # Useful oh-my-zsh plugins
     git gitfast last-working-dir common-aliases history-substring-search
     zsh-syntax-highlighting zsh-autosuggestions
     )
@@ -113,10 +113,6 @@ unalias lt # we need `lt` for https://github.com/localtunnel/localtunnel
 # Load rbenv if installed (to manage your Ruby versions)
 export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
-
-# Load pyenv (to manage your Python versions)
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv version-name)]'
 
 # Load nvm (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"
@@ -159,6 +155,15 @@ export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR=code
 export EDITOR=code
 
+# Load pyenv (to manage your Python versions)
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv version-name)]'
+
+# Added to debug pyenv installation
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
 
@@ -166,6 +171,10 @@ export PYTHONBREAKPOINT=ipdb.set_trace
 # End of Workspace Setup
 
 ################################
+
+
+# Created by `pipx` on 2023-04-23 16:40:06
+export PATH="$PATH:/home/ubuntu/.local/bin"
 
 
 # `direnv` (this line needs to be at the end of the file)
