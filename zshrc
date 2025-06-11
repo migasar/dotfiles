@@ -1,10 +1,34 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
+plugins=(
+  git
+  gitfast
+  last-working-dir
+  common-aliases
+  zsh-syntax-highlighting
+  history-substring-search
+  # 1password alias-finder ansible asdf brew chucknorris
+  # dash dbt docker docker-compose	dotenv encode64 flutter gcloud golang history hitchhiker
+  # jenv jira jsontools kubectl macos mvn npm nvm  pyenv python rbenv rust
+  # ssh-agent sublime terraform vscode yarn z
+  poetry
+  zsh-history-substring-search
+  zsh-autosuggestions
+  aliases
+  iterm2
+  direnv
+  )
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -58,7 +82,7 @@ type -a nvm > /dev/null && load-nvmrc
 # Same for `./node_modules/.bin` and nodejs
 export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 
-# Store your own aliases in the ~/.aliases file and load the here.
+# Store your own aliases in the ~/.aliases file and load them here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 # Encoding stuff for the terminal
@@ -70,3 +94,20 @@ export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+# Created by `pipx` on 2023-11-13 00:59:45
+export PATH="$PATH:/Users/mica/.local/bin"
+eval "$(direnv hook zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
+
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/mica/Code/migasar/gcp/.gcp_keys/gcp-playground-2024q2-649e93c263cf.json

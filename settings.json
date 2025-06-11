@@ -1,87 +1,217 @@
 {
-    "[python]": {
-        "editor.bracketPairColorization.enabled": false,
-        "editor.guides.bracketPairs": false,
-        "editor.tabSize": 4
-    },
     "editor.bracketPairColorization.enabled": true,
-    "editor.detectIndentation": false,
-    "editor.fontSize": 14,
+    // "editor.detectIndentation": false,
+    "editor.fontFamily": "'Hack Nerd Font', 'MesloLGS NF', 'FiraCode Nerd Font'",
+    "editor.fontSize": 13,
+    "editor.fontWeight": "retina",
     "editor.guides.bracketPairs": true,
     "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
+    // "editor.multiCursorModifier": "ctrlCmd",,
+    "editor.formatOnSave": false,
     "editor.renderControlCharacters": true,
     "editor.rulers": [
         80,
         120
     ],
     "editor.showFoldingControls": "always",
-    "editor.snippetSuggestions": "top",
-    "editor.tabSize": 2,
-    "emmet.includeLanguages": {
-        "erb": "html"
-    },
+    // "editor.snippetSuggestions": "top",
+    "editor.tabSize": 4,
+    // "emmet.includeLanguages": {
+    //     "erb": "html"
+    // },
     "emmet.showSuggestionsAsSnippets": true,
     "emmet.triggerExpansionOnTab": true,
     "explorer.confirmDelete": false,
-    "files.exclude": {
-        "__pycache__": true,
-        "_site": true,
-        ".asset-cache": true,
-        ".bundle": true,
-        ".ipynb_checkpoints": true,
-        ".pytest_cache": true,
-        ".sass-cache": true,
-        ".svn": true,
-        "**/.DS_Store": true,
-        "**/.egg-info": true,
-        "**/.git": true,
-        "build": true,
-        "coverage": true,
-        "dist": true,
-        "log": true,
-        "node_modules": true,
-        "public/packs": true,
-        "tmp": true
-    },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.compactFolders": false,
+    // "files.exclude": {
+    //     "__pycache__": true,
+    //     "_site": true,
+    //     ".asset-cache": true,
+    //     ".bundle": true,
+    //     ".ipynb_checkpoints": true,
+    //     ".pytest_cache": true,
+    //     ".sass-cache": true,
+    //     ".svn": true,
+    //     "**/.DS_Store": true,
+    //     "**/.egg-info": true,
+    //     "**/.git": true,
+    //     "build": true,
+    //     "coverage": true,
+    //     "dist": true,
+    //     "log": true,
+    //     "node_modules": true,
+    //     "public/packs": true,
+    //     "tmp": true
+    // },
+    // "files.associations": {
+    //     "*.yaml": "jinja-yaml",
+    //     "*.yml": "jinja-yaml",
+    //     "*.sql": "jinja-sql",
+    //     "*.md": "jinja-md"
+    // },
     "files.hotExit": "off",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "files.watcherExclude": {
-        "**/audits/**": true,
-        "**/coverage/**": true,
-        "**/log/**": true,
-        "**/node_modules/**": true,
-        "**/tmp/**": true,
-        "**/vendor/**": true
-    },
-    "git.enabled": false,
+    //"files.trimTrailingWhitespace": true,
+    // "files.watcherExclude": {
+    //     "**/audits/**": true,
+    //     "**/coverage/**": true,
+    //     "**/log/**": true,
+    //     "**/node_modules/**": true,
+    //     "**/tmp/**": true,
+    //     "**/vendor/**": true
+    // },
+    //"git.enabled": false,
     "notebook.diff.ignoreMetadata": true,
     "notebook.lineNumbers": "on",
-    "notebook.markup.fontSize": 13,
-    "python.defaultInterpreterPath": "~/.pyenv/shims/python",
-    "python.formatting.provider": "yapf",
-    "python.languageServer": "Pylance",
-    "python.linting.enabled": false,
-    "python.linting.flake8Enabled": false,
-    "python.linting.pylintEnabled": false,
-    "python.terminal.activateEnvironment": false,
-    "ruby.lint": {
-        "rubocop": true
-    },
-    "search.exclude": {
-      // Inherits all glob patterns from the `files.exclude` setting.
-      "**/.venv": true
-    },
+    // "notebook.markup.fontSize": 13,
+    // "search.exclude": {
+    //   // Inherits all glob patterns from the `files.exclude` setting.
+    //   "**/.venv": true
+    // },
+    "security.workspace.trust.untrustedFiles": "open",
     "telemetry.telemetryLevel": "off",
-    "window.restoreWindows": "none",
-    "window.newWindowDimensions": "maximized",
-    "workbench.editor.enablePreview": true,
-    "workbench.iconTheme": "vscode-great-icons",
+    //"workbench.editor.enablePreview": true,
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.settings.editor": "json",
     "workbench.settings.openDefaultSettings": true,
     "workbench.settings.useSplitJSON": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.panel.defaultLocation": "right",
+    "workbench.startupEditor": "readme",
+    //"workbench.startupEditor": "newUntitledFile",
+
+    // LANGUAGES //
+    // "[json]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    //"python.defaultInterpreterPath": "/Users/mica/.pyenv/versions/3.11.6/envs/pkm",
+    //"python.languageServer": "Pylance",
+    //"python.formatting.provider": "yapf",
+    //"python.linting.enabled": false,
+    //"python.linting.flake8Enabled": false,
+    //"python.linting.pylintEnabled": false,
+    "python.terminal.activateEnvironment": false,
+    // "[python, rust]": {
+    //    "editor.tabSize": 4,
+    // },
+    // "aws.suppressPrompts": {
+    //     "codeWhispererNewWelcomeMessage": true
+    // },
+    "editor.accessibilitySupport": "off",
+    "workbench.fontAliasing": "auto",
+    "terminal.integrated.fontSize": 13,
+    //"ruby.lint": {
+    //    "rubocop": true
+    //},
+    // EXTENSIONS //
+    //
+    //"sqlfluff.config": "${workspaceFolder}/.sqlfluff",
+    //"sqlfluff.dialect": "snowflake",
+    //"sqlfluff.env.environmentVariables": [
+    //  {
+    //    "key": "example_key",
+    //    "value": "example_value"
+    //  }
+    //],
+    //"sqlfluff.env.customDotEnvFiles": [
+    //  "${workspaceFolder}/example.env"
+    //],
+    //"sqlfluff.env.useDotEnvFile": true,
+    //"sqlfluff.excludeRules": ["L009"],
+    //"sqlfluff.executablePath": "sqlfluff",
+    //"sqlfluff.ignoreLocalConfig": false,
+    //"sqlfluff.ignoreParsing": false,
+    //"sqlfluff.rules": [],
+    //"sqlfluff.suppressNotifications": false,
+    //"sqlfluff.workingDirectory": "",
+    //// Linter
+    //"sqlfluff.linter.arguments": [],
+    //"sqlfluff.linter.run": "onType",
+    //"sqlfluff.linter.diagnosticSeverity": "error",
+    //"sqlfluff.linter.diagnosticSeverityByRule": [
+    //  {
+    //    "rule": "L010",
+    //    "severity": "warning"
+    //  }
+    //],
+    //"sqlfluff.linter.lintEntireProject": true,
+    // Formatter
+    //"sqlfluff.format.arguments": ["--FIX-EVEN-UNPARSABLE"],
+    //"sqlfluff.format.enabled": true,
+    //"sqlfluff.codeActions.excludeRules.global": false,
+    //"sqlfluff.linter.run": "onSave",
+    //"sqlfluff.experimental.format.executeInTerminal": true,
+    // DBT Configuration
+    // DBT setup requires these settings to lint and format the document.
+    "editor.formatOnSave": false,
+    "[jinja-sql]": {
+      "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
+    },
+    "python.venvFolders": [
+      "pyenv"
+    ],
+    "python.venvPath": "~/.pyenv",
+    "workbench.colorTheme": "βui - Monokai Octagon",
+    "hediet.vscode-drawio.resizeImages": null,
+    "excalidraw.theme": "light",
+    "hediet.vscode-drawio.theme": "min",
+    "mermaid-editor.generate.quality": 10,
+    "mermaid-editor.generate.scale": 10,
+    "mermaid-editor.generate.outputPath": "",
+    "snowflake.connectionsConfigFile": "/Users/mica/.snowflake/connections.toml",
+    "workbench.panel.showLabels": false,
+    "explorer.confirmPasteNative": false,
+
+    // ToDoTree
+    //"todo-tree.general.showActivityBarBadge": true,
+    //"todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+    //"todo-tree.general.statusBar": "current file",
+    "todo-tree.general.tagGroups": {"FIX": ["FIXME","FIXIT"]},
+    "todo-tree.general.tags": [
+      "BUG",
+      "HACK",
+      "FAIL",
+      "FIXME",
+      "FIX",
+      "TODO",
+      "XXX",
+      "[ ]",
+      "[x]"
+    ],
+    "todo-tree.highlights.customHighlight": {
+      // "TODO": {
+      //   // "icon": "check",
+      //   // "type": "line",
+      //   "background": "white",
+      //   "foreground": "black"
+      // },
+      "BUG": {
+        "icon": "bug",
+        "background": "orange",
+        // "foreground": "black"
+      },
+      "FAIL": {
+        "icon": "stop",
+        "background": "red",
+        // "foreground": "black"
+      },
+      "FIX": {
+        "icon": "flame",
+        "background": "yellow",
+        // "foreground": "black"
+      },
+      "HACK": {
+        "icon": "tools",
+        "background": "blue",
+        // "foreground": "black"
+      },
+      // "[ ]": {
+      //   "icon": "issue-draft"
+      // },
+      // "[x]": {
+      //   "icon": "issue-closed"
+      // }
+    },
+    "filesize.showGzipInStatusBar": true,
+    "filesize.useDecimal": true,
 }
