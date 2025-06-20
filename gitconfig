@@ -59,3 +59,6 @@
 
 [init]
   defaultBranch = master
+[user]
+	email = migatsar@gmail.com
+	name = Mickael GASPAR
