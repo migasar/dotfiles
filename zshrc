@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-export ZSH="$HOME/.config/zsh/.oh-my-zsh"
+export ZSH="$HOME/.config/ohmyzsh"
 #export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -80,8 +80,11 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
   # Useful oh-my-zsh plugins for Le Wagon bootcamps
-  gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search
+  #git zsh-syntax-highlighting
+  gitfast last-working-dir common-aliases history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -191,11 +194,24 @@ export EDITOR=code
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+[[ ! -f ~/.config/p10k.zsh ]] || source ~/.config/p10k.zsh
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Docker CLI completions
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/mica/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+# uv CLI completions
+. "$HOME/.local/bin/env"
+eval "$(uv generate-shell-completion zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# p10k theme
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
